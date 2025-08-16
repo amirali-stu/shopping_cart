@@ -1,0 +1,655 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "گوشی موبایل سامسونگ گلکسی A52",
+      "price": 8000000,
+      "description": "گوشی میان‌رده با صفحه نمایش ۶.۵ اینچ و دوربین ۶۴ مگاپیکسلی",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.3,
+      "category": "Mobile",
+      "count": 1
+    },
+    {
+      "id": "2",
+      "name": "لپ‌تاپ ایسوس مدل VivoBook 15",
+      "price": 21000000,
+      "description": "لپ‌تاپ با پردازنده Intel Core i5 و حافظه SSD 512 گیگابایت",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.5,
+      "category": "Laptop",
+      "count": 1
+    },
+    {
+      "id": "3",
+      "name": "هدفون بی‌سیم اپل AirPods Pro",
+      "price": 9000000,
+      "description": "هدفون بی‌سیم با حذف نویز فعال و کیفیت صدای عالی",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.7,
+      "category": "Headphones",
+      "count": 1
+    },
+    {
+      "id": "4",
+      "name": "تلویزیون هوشمند سامسونگ ۴۳ اینچ",
+      "price": 15000000,
+      "description": "تلویزیون LED با کیفیت تصویر Full HD و قابلیت اتصال به اینترنت",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.1,
+      "category": "TV",
+      "count": 1
+    },
+    {
+      "id": "5",
+      "name": "دوربین دیجیتال کانن EOS 250D",
+      "price": 20000000,
+      "description": "دوربین DSLR با سنسور 24 مگاپیکسل و فیلمبرداری Full HD",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4,
+      "category": "Camera",
+      "count": 1
+    },
+    {
+      "id": "6",
+      "name": "ساعت هوشمند اپل واچ سری ۶",
+      "price": 12000000,
+      "description": "ساعت هوشمند با صفحه نمایش همیشه روشن و امکانات سلامت پیشرفته",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.8,
+      "category": "Smartwatch",
+      "count": 1
+    },
+    {
+      "id": "7",
+      "name": "یخچال فریزر ال جی مدل X334",
+      "price": 32000000,
+      "description": "یخچال فریزر با ظرفیت بالا و فناوری صرفه جویی در انرژی",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.2,
+      "category": "HomeAppliance",
+      "count": 1
+    },
+    {
+      "id": "8",
+      "name": "ماشین لباسشویی بوش مدل WAT2848XGC",
+      "price": 23000000,
+      "description": "ماشین لباسشویی ۸ کیلوگرمی با تکنولوژی ضد چروک",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.6,
+      "category": "HomeAppliance",
+      "count": 1
+    },
+    {
+      "id": "9",
+      "name": "کفش ورزشی نایکی مدل Air Max",
+      "price": 4500000,
+      "description": "کفش اسپرت با فناوری هواگیری برای راحتی بیشتر",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.4,
+      "category": "Shoes",
+      "count": 1
+    },
+    {
+      "id": "10",
+      "name": "کتاب «فناوری‌های نوین»",
+      "price": 120000,
+      "description": "کتابی جامع درباره فناوری‌های نوین و کاربردهای آن‌ها",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4,
+      "category": "Books",
+      "count": 1
+    },
+    {
+      "id": "11",
+      "name": "اسپیکر بلوتوثی JBL مدل Flip 5",
+      "price": 3500000,
+      "description": "اسپیکر کوچک و قابل حمل با صدای قدرتمند",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.3,
+      "category": "Speakers",
+      "count": 1
+    },
+    {
+      "id": "12",
+      "name": "دوربین ورزشی گوپرو HERO9",
+      "price": 9000000,
+      "description": "دوربین ضد آب و مقاوم با کیفیت تصویر 5K",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.5,
+      "category": "Camera",
+      "count": 1
+    },
+    {
+      "id": "13",
+      "name": "کوله پشتی کوهنوردی کچوا",
+      "price": 1500000,
+      "description": "کوله سبک و مقاوم مناسب برای کوهنوردی و پیاده‌روی",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.1,
+      "category": "Backpack",
+      "count": 1
+    },
+    {
+      "id": "14",
+      "name": "تبلت اپل iPad Air 4",
+      "price": 22000000,
+      "description": "تبلت با صفحه نمایش ۱۰.۹ اینچی و پردازنده قدرتمند A14",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.6,
+      "category": "Tablet",
+      "count": 1
+    },
+    {
+      "id": "15",
+      "name": "موبایل شیائومی Redmi Note 10",
+      "price": 7000000,
+      "description": "گوشی میان‌رده با دوربین ۴۸ مگاپیکسلی و باتری قدرتمند",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.2,
+      "category": "Mobile",
+      "count": 1
+    },
+    {
+      "id": "16",
+      "name": "هدفون بی‌سیم سونی مدل WH-1000XM4",
+      "price": 12000000,
+      "description": "هدفون با حذف نویز فعال و کیفیت صدای عالی",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.7,
+      "category": "Headphones",
+      "count": 1
+    },
+    {
+      "id": "17",
+      "name": "یخچال ساید بای ساید ال جی مدل GR-J247",
+      "price": 40000000,
+      "description": "یخچال بزرگ با ظرفیت بالا و سیستم سرمایش چندگانه",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.3,
+      "category": "HomeAppliance",
+      "count": 1
+    },
+    {
+      "id": "18",
+      "name": "ماشین ظرفشویی بوش مدل SMS46NI05E",
+      "price": 28000000,
+      "description": "ماشین ظرفشویی ۱۴ نفره با مصرف انرژی کم",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.5,
+      "category": "HomeAppliance",
+      "count": 1
+    },
+    {
+      "id": "19",
+      "name": "کفش پیاده‌روی آدیداس مدل Ultraboost",
+      "price": 6000000,
+      "description": "کفش با کفی نرم و طراحی ارگونومیک برای دویدن",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.4,
+      "category": "Shoes",
+      "count": 1
+    },
+    {
+      "id": "20",
+      "name": "کتاب «برنامه‌نویسی جاوااسکریپت»",
+      "price": 150000,
+      "description": "کتابی جامع برای یادگیری برنامه‌نویسی جاوااسکریپت به زبان فارسی",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.1,
+      "category": "Books",
+      "count": 1
+    },
+    {
+      "id": "21",
+      "name": "اسپیکر هوشمند گوگل Nest Mini",
+      "price": 2500000,
+      "description": "اسپیکر کوچک با کیفیت صدای عالی و پشتیبانی از دستیار گوگل",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.3,
+      "category": "Speakers",
+      "count": 1
+    },
+    {
+      "id": "22",
+      "name": "دوربین مداربسته شیائومی مدل Mi Home",
+      "price": 2800000,
+      "description": "دوربین امنیتی با قابلیت اتصال به موبایل و دید در شب",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4,
+      "category": "Camera",
+      "count": 1
+    },
+    {
+      "id": "23",
+      "name": "کوله پشتی لپ‌تاپ دل",
+      "price": 1300000,
+      "description": "کوله سبک و مقاوم مناسب برای حمل لپ‌تاپ تا ۱۵ اینچ",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.2,
+      "category": "Backpack",
+      "count": 1
+    },
+    {
+      "id": "24",
+      "name": "تبلت سامسونگ Galaxy Tab S7",
+      "price": 19000000,
+      "description": "تبلت با صفحه نمایش ۱۱ اینچی و قلم استایلوس",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.5,
+      "category": "Tablet",
+      "count": 1
+    },
+    {
+      "id": "25",
+      "name": "هدفون Beats Studio3 Wireless",
+      "price": 14000000,
+      "description": "هدفون بی‌سیم با حذف نویز و صدای با کیفیت",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.6,
+      "category": "Headphones",
+      "count": 1
+    },
+    {
+      "id": "26",
+      "name": "یخچال فریزر دوو مدل D4S-0010",
+      "price": 28000000,
+      "description": "یخچال فریزر با ظرفیت مناسب و طراحی مدرن",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.1,
+      "category": "HomeAppliance",
+      "count": 1
+    },
+    {
+      "id": "27",
+      "name": "ماشین لباسشویی پاکشوما مدل TFU-75401",
+      "price": 16000000,
+      "description": "ماشین لباسشویی ۷.۵ کیلویی با مصرف انرژی A++",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.3,
+      "category": "HomeAppliance",
+      "count": 1
+    },
+    {
+      "id": "28",
+      "name": "کفش کتانی نایکی مدل Revolution 5",
+      "price": 3500000,
+      "description": "کفش راحت و سبک مناسب برای ورزش و استفاده روزمره",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.4,
+      "category": "Shoes",
+      "count": 1
+    },
+    {
+      "id": "29",
+      "name": "کتاب «اصول طراحی رابط کاربری»",
+      "price": 180000,
+      "description": "کتابی کاربردی برای یادگیری طراحی UI/UX",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4,
+      "category": "Books",
+      "count": 1
+    },
+    {
+      "id": "30",
+      "name": "اسپیکر بلوتوثی Bose SoundLink",
+      "price": 8000000,
+      "description": "اسپیکر با کیفیت صدای بالا و طراحی جمع‌وجور",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.5,
+      "category": "Speakers",
+      "count": 1
+    },
+    {
+      "id": "31",
+      "name": "دوربین عکاسی نیکون D3500",
+      "price": 19000000,
+      "description": "دوربین DSLR با سنسور 24 مگاپیکسل و فیلمبرداری Full HD",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.3,
+      "category": "Camera",
+      "count": 1
+    },
+    {
+      "id": "32",
+      "name": "تبلت هواوی MatePad Pro",
+      "price": 21000000,
+      "description": "تبلت با صفحه نمایش ۱۰.۸ اینچ و قلم استایلوس",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.4,
+      "category": "Tablet",
+      "count": 1
+    },
+    {
+      "id": "33",
+      "name": "هدفون بی‌سیم آنکر Soundcore Liberty Air 2",
+      "price": 3500000,
+      "description": "هدفون با کیفیت صدای بالا و عمر باتری خوب",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.2,
+      "category": "Headphones",
+      "count": 1
+    },
+    {
+      "id": "34",
+      "name": "مچ‌بند هوشمند شیائومی Mi Band 6",
+      "price": 900000,
+      "description": "مچ‌بند با صفحه نمایش رنگی و قابلیت‌های سلامت متنوع",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.1,
+      "category": "Smartwatch",
+      "count": 1
+    },
+    {
+      "id": "35",
+      "name": "یخچال فریزر سامسونگ مدل RT38",
+      "price": 25000000,
+      "description": "یخچال با ظرفیت بالا و سیستم خنک کننده سریع",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.2,
+      "category": "HomeAppliance",
+      "count": 1
+    },
+    {
+      "id": "36",
+      "name": "ماشین لباسشویی ال جی مدل WM-72W",
+      "price": 18000000,
+      "description": "ماشین لباسشویی ۷ کیلوگرمی با برنامه‌های شستشوی متنوع",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.4,
+      "category": "HomeAppliance",
+      "count": 1
+    },
+    {
+      "id": "37",
+      "name": "کفش کوهنوردی سالومون مدل X Ultra 3",
+      "price": 6000000,
+      "description": "کفش مقاوم و راحت برای کوهنوردی و پیاده‌روی در طبیعت",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.3,
+      "category": "Shoes",
+      "count": 1
+    },
+    {
+      "id": "38",
+      "name": "کتاب «یادگیری زبان برنامه‌نویسی پایتون»",
+      "price": 130000,
+      "description": "کتابی مفید برای شروع یادگیری زبان برنامه‌نویسی پایتون",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.5,
+      "category": "Books",
+      "count": 1
+    },
+    {
+      "id": "39",
+      "name": "اسپیکر قابل حمل Anker Soundcore",
+      "price": 3000000,
+      "description": "اسپیکر کوچک با صدای بلند و باتری قوی",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.2,
+      "category": "Speakers",
+      "count": 1
+    },
+    {
+      "id": "40",
+      "name": "دوربین دیجیتال سونی مدل Alpha a6000",
+      "price": 17000000,
+      "description": "دوربین بدون آینه با سنسور ۲۴ مگاپیکسلی و فیلمبرداری Full HD",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.4,
+      "category": "Camera",
+      "count": 1
+    },
+    {
+      "id": "41",
+      "name": "تبلت سامسونگ Galaxy Tab A7",
+      "price": 10000000,
+      "description": "تبلت با صفحه نمایش ۱۰.۴ اینچ و باتری بادوام",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.3,
+      "category": "Tablet",
+      "count": 1
+    },
+    {
+      "id": "42",
+      "name": "هدفون بی‌سیم بیتس مدل Powerbeats Pro",
+      "price": 13000000,
+      "description": "هدفون ورزشی با عمر باتری طولانی و کیفیت صدای بالا",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.6,
+      "category": "Headphones",
+      "count": 1
+    },
+    {
+      "id": "43",
+      "name": "یخچال فریزر دوو مدل D2S-0010",
+      "price": 27000000,
+      "description": "یخچال فریزر با طراحی شیک و فناوری صرفه‌جویی انرژی",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.1,
+      "category": "HomeAppliance",
+      "count": 1
+    },
+    {
+      "id": "44",
+      "name": "ماشین لباسشویی سامسونگ مدل WW70",
+      "price": 19000000,
+      "description": "ماشین لباسشویی ۷ کیلوگرمی با برنامه‌های متنوع شستشو",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.4,
+      "category": "HomeAppliance",
+      "count": 1
+    },
+    {
+      "id": "45",
+      "name": "کفش ورزشی آدیداس مدل Stan Smith",
+      "price": 4000000,
+      "description": "کفش کلاسیک با طراحی ساده و راحت",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.3,
+      "category": "Shoes",
+      "count": 1
+    },
+    {
+      "id": "46",
+      "name": "کتاب «یادگیری React»",
+      "price": 160000,
+      "description": "کتابی کاربردی برای یادگیری فریمورک React به زبان فارسی",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.2,
+      "category": "Books",
+      "count": 1
+    },
+    {
+      "id": "47",
+      "name": "اسپیکر بلوتوثی Ultimate Ears Boom 3",
+      "price": 7500000,
+      "description": "اسپیکر ضد آب با صدای قدرتمند و باتری طولانی مدت",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.5,
+      "category": "Speakers",
+      "count": 1
+    },
+    {
+      "id": "48",
+      "name": "دوربین ورزشی DJI Osmo Action",
+      "price": 10000000,
+      "description": "دوربین مقاوم با کیفیت تصویر 4K و تثبیت کننده تصویر",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.4,
+      "category": "Camera",
+      "count": 1
+    },
+    {
+      "id": "49",
+      "name": "مچ‌بند هوشمند Fitbit Charge 4",
+      "price": 1800000,
+      "description": "مچ‌بند با امکانات پایش ضربان قلب و GPS داخلی",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.3,
+      "category": "Smartwatch",
+      "count": 1
+    },
+    {
+      "id": "50",
+      "name": "تبلت آمازون Fire HD 10",
+      "price": 9000000,
+      "description": "تبلت با صفحه نمایش ۱۰.۱ اینچی و باتری با دوام بالا",
+      "image": "./src/assets/images/products/mobail.webp",
+      "rating": 4.2,
+      "category": "Tablet",
+      "count": 1
+    }
+  ],
+  "users": [
+    {
+      "id": "2de8",
+      "name": "رضا",
+      "userName": "reza",
+      "password": "010203",
+      "rePassword": "010203",
+      "basket": [
+        {
+          "id": "8",
+          "name": "ماشین لباسشویی بوش مدل WAT2848XGC",
+          "price": 23000000,
+          "description": "ماشین لباسشویی ۸ کیلوگرمی با تکنولوژی ضد چروک",
+          "image": "./src/assets/images/products/mobail.webp",
+          "rating": 4.6,
+          "category": "HomeAppliance",
+          "count": 1
+        },
+        {
+          "id": "3",
+          "name": "هدفون بی‌سیم اپل AirPods Pro",
+          "price": 9000000,
+          "description": "هدفون بی‌سیم با حذف نویز فعال و کیفیت صدای عالی",
+          "image": "./src/assets/images/products/mobail.webp",
+          "rating": 4.7,
+          "category": "Headphones",
+          "count": 6
+        },
+        {
+          "id": "4",
+          "name": "تلویزیون هوشمند سامسونگ ۴۳ اینچ",
+          "price": 15000000,
+          "description": "تلویزیون LED با کیفیت تصویر Full HD و قابلیت اتصال به اینترنت",
+          "image": "./src/assets/images/products/mobail.webp",
+          "rating": 4.1,
+          "category": "TV",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "c520",
+      "name": "امیرعلی",
+      "userName": "Amirali",
+      "password": "123456",
+      "rePassword": "123456",
+      "basket": []
+    },
+    {
+      "id": "dd33",
+      "name": "حسین",
+      "userName": "hossein",
+      "password": "0258963",
+      "rePassword": "0258963",
+      "basket": [
+        {
+          "id": "2",
+          "name": "لپ‌تاپ ایسوس مدل VivoBook 15",
+          "price": 21000000,
+          "description": "لپ‌تاپ با پردازنده Intel Core i5 و حافظه SSD 512 گیگابایت",
+          "image": "./src/assets/images/products/mobail.webp",
+          "rating": 4.5,
+          "category": "Laptop",
+          "count": 4
+        },
+        {
+          "id": "16",
+          "name": "هدفون بی‌سیم سونی مدل WH-1000XM4",
+          "price": 12000000,
+          "description": "هدفون با حذف نویز فعال و کیفیت صدای عالی",
+          "image": "./src/assets/images/products/mobail.webp",
+          "rating": 4.7,
+          "category": "Headphones",
+          "count": 4
+        },
+        {
+          "id": "33",
+          "name": "هدفون بی‌سیم آنکر Soundcore Liberty Air 2",
+          "price": 3500000,
+          "description": "هدفون با کیفیت صدای بالا و عمر باتری خوب",
+          "image": "./src/assets/images/products/mobail.webp",
+          "rating": 4.2,
+          "category": "Headphones",
+          "count": 1
+        },
+        {
+          "id": "8",
+          "name": "ماشین لباسشویی بوش مدل WAT2848XGC",
+          "price": 23000000,
+          "description": "ماشین لباسشویی ۸ کیلوگرمی با تکنولوژی ضد چروک",
+          "image": "./src/assets/images/products/mobail.webp",
+          "rating": 4.6,
+          "category": "HomeAppliance",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "carts": [
+    {
+      "userId": 1,
+      "items": [
+        {
+          "productId": 1,
+          "qty": 2
+        },
+        {
+          "productId": 7,
+          "qty": 1
+        }
+      ],
+      "id": "81ea"
+    },
+    {
+      "userId": 2,
+      "items": [
+        {
+          "productId": 3,
+          "qty": 1
+        },
+        {
+          "productId": 9,
+          "qty": 1
+        }
+      ],
+      "id": "cf9c"
+    },
+    {
+      "userId": 3,
+      "items": [],
+      "id": "3cfc"
+    },
+    {
+      "userId": 4,
+      "items": [
+        {
+          "productId": 2,
+          "qty": 1
+        },
+        {
+          "productId": 5,
+          "qty": 1
+        },
+        {
+          "productId": 8,
+          "qty": 3
+        }
+      ],
+      "id": "5a04"
+    }
+  ]
+}
