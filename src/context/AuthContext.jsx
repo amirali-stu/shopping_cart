@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import useAlert from "../hooks/useAlert";
 
 const AuthContext = createContext();
 
@@ -10,6 +11,19 @@ export const AuthProvider = ({ children }) => {
   const [basket, setBasket] = useState([]);
   const [totalAmount, setTotalAmount] = useState(0);
   const [discount, setDiscount] = useState(0);
+  const { showAlert } = useAlert();
+  const [inventoryMap, setInventoryMap] = useState({}); // id => تعداد موجودی
+
+  // وقتی صفحه لود شد یا محصولات رو گرفتیم
+  useEffect(() => {
+    fetch("http://localhost:4000/products")
+      .then((res) => res.json())
+      .then((data) => {
+        const map = {};
+        data.forEach((p) => (map[p.id] = p.inventory));
+        setInventoryMap(map);
+      });
+  }, []);
 
   // وقتی basket آپدیت می‌شه
   useEffect(() => {
@@ -136,43 +150,51 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const updateBasket = async (newBasketItem) => {
-    setBasket((prevBasket) => {
-      // بررسی می‌کنیم آیا محصول قبلاً وجود داشته
-      const existingIndex = prevBasket.findIndex(
-        (item) => item.id === newBasketItem.id
-      );
+  // هنگام افزودن محصول به سبد
+  const updateBasket = async (product) => {
+    try {
+      // 1️⃣ گرفتن موجودی واقعی محصول از سرور
+      const res = await fetch(`http://localhost:4000/products/${product.id}`);
+      if (!res.ok) throw new Error("خطا در دریافت محصول از سرور");
+      const productFromServer = await res.json();
 
-      let updatedBasket = [...prevBasket];
-
-      if (existingIndex !== -1) {
-        // اگر محصول وجود داشت، فقط count اضافه می‌کنیم
-        updatedBasket[existingIndex].count =
-          (updatedBasket[existingIndex].count || 1) + 1;
-      } else {
-        // محصول جدید رو اضافه می‌کنیم و count رو 1 می‌گذاریم
-        updatedBasket.push({ ...newBasketItem, count: 1 });
+      if (productFromServer.inventory <= 0) {
+        showAlert("خطا", "این محصول موجودی ندارد", "error");
+        return;
       }
 
-      // ذخیره داخل localStorage
-      setUserData((prev) => {
-        if (!prev) return prev;
-        const updatedUser = { ...prev, basket: updatedBasket };
-        localStorage.setItem("user", JSON.stringify(updatedUser));
-        return updatedUser;
+      // 2️⃣ آپدیت سبد خرید به صورت سینکرون
+      setBasket((prevBasket) => {
+        const existingItem = prevBasket.find((item) => item.id === product.id);
+        let updatedBasket;
+        if (existingItem) {
+          updatedBasket = prevBasket.map((item) =>
+            item.id === product.id ? { ...item, count: item.count + 1 } : item
+          );
+        } else {
+          updatedBasket = [...prevBasket, { ...product, count: 1 }];
+        }
+
+        updateBasketData(updatedBasket);
+        return updatedBasket;
       });
 
-      // آپدیت سرور
-      if (userData?.id) {
-        fetch(`http://localhost:4000/users/${userData.id}`, {
-          method: "PATCH",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ basket: updatedBasket }),
-        }).catch((err) => console.error(err));
-      }
+      // 3️⃣ کم کردن موجودی محلی
+      setInventoryMap((prev) => ({
+        ...prev,
+        [product.id]: productFromServer.inventory - 1,
+      }));
 
-      return updatedBasket;
-    });
+      // 4️⃣ بروزرسانی موجودی روی سرور
+      await fetch(`http://localhost:4000/products/${product.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ inventory: productFromServer.inventory - 1 }),
+      });
+    } catch (err) {
+      console.error(err);
+      showAlert("خطا", "مشکل در افزودن محصول به سبد خرید", "error");
+    }
   };
 
   const logout = () => {
@@ -182,36 +204,94 @@ export const AuthProvider = ({ children }) => {
   };
 
   // افزایش تعداد محصول
-  const onIncrease = (id) => {
+  const onIncrease = async (id) => {
+    const available = inventoryMap[id] || 0;
+
+    if (available <= 0) {
+      showAlert("خطا", "موجودی در انبار به اتمام رسیده", "error");
+      return;
+    }
+
     setBasket((prevBasket) => {
       const updatedBasket = prevBasket.map((item) =>
-        item.id === id ? { ...item, count: (item.count || 1) + 1 } : item
+        item.id === id ? { ...item, count: item.count + 1 } : item
       );
-
       updateBasketData(updatedBasket);
       return updatedBasket;
     });
+
+    // کم کردن موجودی محلی
+    setInventoryMap((prev) => ({ ...prev, [id]: prev[id] - 1 }));
+
+    // بروزرسانی موجودی سرور
+    const productFromServer = await fetch(
+      `http://localhost:4000/products/${id}`
+    ).then((res) => res.json());
+    await fetch(`http://localhost:4000/products/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ inventory: productFromServer.inventory - 1 }),
+    }).catch((err) => console.error(err));
   };
 
-  // کاهش تعداد محصول
-  const onDecrease = (id) => {
+  // کاهش تعداد محصول با بازگرداندن موجودی به سرور
+  const onDecrease = async (id) => {
+    const existingItem = basket.find((item) => item.id === id);
+    if (!existingItem || existingItem.count <= 1) return; // حداقل یک عدد بماند
+
     setBasket((prevBasket) => {
       const updatedBasket = prevBasket.map((item) =>
-        item.id === id
-          ? { ...item, count: Math.max(1, (item.count || 1) - 1) }
-          : item
+        item.id === id ? { ...item, count: item.count - 1 } : item
       );
-
       updateBasketData(updatedBasket);
       return updatedBasket;
     });
+
+    // افزایش موجودی محلی
+    setInventoryMap((prev) => ({ ...prev, [id]: prev[id] + 1 }));
+
+    // بروزرسانی موجودی سرور
+    const productFromServer = await fetch(
+      `http://localhost:4000/products/${id}`
+    ).then((res) => res.json());
+    await fetch(`http://localhost:4000/products/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ inventory: productFromServer.inventory + 1 }),
+    }).catch((err) => console.error(err));
   };
 
-  // حذف محصول
-  const onRemove = (id) => {
-    const updatedBasket = basket.filter((item) => item.id !== id);
-    updateBasketData(updatedBasket);
-    setBasket(updatedBasket);
+  const onRemove = async (id) => {
+    try {
+      const itemToRemove = basket.find((item) => item.id === id);
+      if (!itemToRemove) return;
+
+      // حذف از سبد
+      const updatedBasket = basket.filter((item) => item.id !== id);
+      updateBasketData(updatedBasket);
+      setBasket(updatedBasket);
+
+      // بازگرداندن موجودی محلی
+      setInventoryMap((prev) => ({
+        ...prev,
+        [id]: (prev[id] || 0) + (itemToRemove.count || 0),
+      }));
+
+      // بروزرسانی موجودی روی سرور
+      const productFromServer = await fetch(
+        `http://localhost:4000/products/${id}`
+      ).then((res) => res.json());
+      await fetch(`http://localhost:4000/products/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          inventory: productFromServer.inventory + (itemToRemove.count || 0),
+        }),
+      });
+    } catch (err) {
+      console.error(err);
+      showAlert("خطا", "مشکل در حذف محصول از سبد خرید", "error");
+    }
   };
 
   // تابع مشترک برای آپدیت مبلغ و ذخیره

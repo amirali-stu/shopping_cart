@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import Tooltip from "./Tooltip";
 
-
 function ProductsGrid({ products, notFoundImage }) {
   const itemsPerPage = 8;
   const [currentPage, setCurrentPage] = useState(1);
@@ -70,8 +69,13 @@ function ProductsGrid({ products, notFoundImage }) {
                 </span>
               </div>
 
-              <div className="text-indigo-600 dark:text-indigo-400 font-bold text-lg mb-3">
-                {product.price.toLocaleString("fa-IR")} تومان
+              <div className="flex md:items-center justify-between mb-3 md:flex-row-reverse max-sm:flex-col-reverse max-md:gap-y-1">
+                <div className="text-indigo-600 dark:text-indigo-400 font-bold text-lg">
+                  {product.price.toLocaleString("fa-IR")} تومان
+                </div>
+                <span className="text-indigo-600 dark:text-indigo-400 ">
+                  موجودی : {product.inventory}
+                </span>
               </div>
 
               {/* دکمه اضافه کردن به سبد خرید */}
